@@ -33,8 +33,8 @@ jobs:
         with:
           artifacts: main
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ github.head_ref }}
-          releaseName: ${{ github.head_ref }}
+          tag: ${{ github.head_ref || github.ref_name }}
+          releaseName: ${{ github.head_ref || github.ref_name }}
           releaseNotes: ${{ github.event.release.body }}
           overwrite: true
               
