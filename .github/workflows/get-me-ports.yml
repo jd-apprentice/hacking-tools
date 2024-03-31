@@ -17,7 +17,7 @@ jobs:
       - uses: goto-bus-stop/setup-zig@v2
       - run: zig build-exe get_me_ports/main.zig -fstrip -fsingle-threaded -target x86_64-linux -O ReleaseSafe
   
-  release_linux:
+  release:
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -26,3 +26,14 @@ jobs:
         with:
           name: main
           path: .
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1.14.0
+        with:
+          artifacts: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref }}
+          releaseName: ${{ github.ref }}
+          releaseNotes: ${{ github.event.release.body }}
+          overwrite: true
+              
