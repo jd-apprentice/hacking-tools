@@ -5,6 +5,9 @@ out_file ?= get-me-ports
 run: $(folder)/$(file).zig
 	zig run $(folder)/$(file).zig $(args)
 
+build-all:
+	zig build-exe $(folder)/$(file).zig -fstrip -fsingle-threaded -target x86_64-linux -O ReleaseSafe
+
 build-linux: $(folder)/$(file).zig
 	zig build-exe $(folder)/$(file).zig -fstrip -fsingle-threaded -target x86_64-linux -O ReleaseSafe
 	if [ ! -d $(folder)/linux ]; then mkdir $(folder)/linux; fi

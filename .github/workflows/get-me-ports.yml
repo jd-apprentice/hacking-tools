@@ -1,0 +1,29 @@
+name: Zig CI
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "get_me_ports/**"
+      - ".github/workflows/get-me-ports.yml"
+  release:
+    types: [ "published" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: goto-bus-stop/setup-zig@v2
+      - run: zig build-exe get_me_ports/main.zig -fstrip -fsingle-threaded -target x86_64-linux -O ReleaseSafe
+  
+  release_linux:
+    displayName: Release Linux
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/upload-artifact@v2
+        with:
+          name: get_me_ports
+          path: get_me_ports/main
