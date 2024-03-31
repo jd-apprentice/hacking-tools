@@ -18,7 +18,6 @@ jobs:
       - run: zig build-exe get_me_ports/main.zig -fstrip -fsingle-threaded -target x86_64-linux -O ReleaseSafe
   
   release_linux:
-    displayName: Release Linux
     runs-on: ubuntu-latest
     needs: build
     steps:
