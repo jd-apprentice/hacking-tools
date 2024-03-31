@@ -1,12 +1,6 @@
 const std = @import("std");
 
-const ignoredPhrases = [_][]const u8{
-    "#",
-    "Nmap scan report for",
-    "Host is up",
-    "Other addresses for",
-    "Not shown:",
-};
+const ignoredPhrases = [_][]const u8{ "#", "Nmap scan report for", "Host is up", "Other addresses for", "Not shown:", "Service Info: ", "Service detection performed", "filtered" };
 
 pub fn getFile() !std.fs.File {
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
