@@ -33,3 +33,4 @@ Structure is as follows:
 - https://zighelp.org/chapter-3/#cross-compilation
 - https://zig.guide/
 - https://ziglang.org/documentation/0.11.0/#Introduction
+- https://ziggit.dev/

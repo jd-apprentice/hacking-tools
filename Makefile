@@ -1,6 +1,6 @@
 file ?= main
-folder ?= get_me_ports
-out_file ?= get-me-ports
+folder ?= mks
+out_file ?= mks
 
 run: $(folder)/$(file).zig
 	zig run $(folder)/$(file).zig $(args)
