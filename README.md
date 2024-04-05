@@ -10,21 +10,43 @@ After doing a `nmap` scan, you can use `get-me-ports` to only display relevant i
 
 ![img](./assets/get_me_ports.png)
 
+## Mks
+
+A simple script to create a scaffold for your htb machines.
+
+![img](./assets/mks.png)
+
 ## File Structure
 
 Structure is as follows:
 
 ```
 🌳 hacking-tools/
-┣ 📁 get_me_ports/
-┃ ┣ 📁 linux/
-┃ ┃ ┗ 📄 get-me-ports
-┃ ┣ 📁 windows/
-┃ ┃ ┗ 📄 get-me-ports.exe
-┃ ┗ 📄 main.zig
+┣ 📁 .github/
+┃ ┗ 📁 workflows/
+┃   ┗ 📄 get-me-ports.yml
+┣ 📁 apps/
+┃ ┣ 📁 get_me_ports/
+┃ ┃ ┣ 📁 linux/
+┃ ┃ ┃ ┗ 📄 get-me-ports_x86_64
+┃ ┃ ┗ 📁 windows/
+┃ ┃   ┗ 📄 get-me-ports_x86_64.exe
+┃ ┣ 📁 mks/
+┃ ┃ ┣ 📁 linux/
+┃ ┃ ┃ ┗ 📄 mks_x86_64
+┃ ┃ ┗ 📁 windows/
+┃ ┃   ┗ 📄 mks_x86_64.exe
+┃ ┣ 📄 get-me-ports.zig
+┃ ┣ 📄 mks.zig
+┃ ┗ 📄 utils.zig
+┣ 📁 assets/
+┃ ┣ 📄 get_me_ports.png
+┃ ┣ 📄 mks.png
+┃ ┗ 📄 wallpaper.jpg
 ┣ 📄 .gitignore
 ┣ 📄 Makefile
-┗ 📄 README.md
+┣ 📄 README.md
+┗ 📄 sampleScan
 ```
 
 ## Links
