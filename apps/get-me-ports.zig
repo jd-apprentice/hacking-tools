@@ -1,7 +1,7 @@
 const std = @import("std");
 const utils = @import("utils.zig");
 
-const ignoredPhrases = [_][]const u8{ "#", "Nmap scan report for", "Host is up", "Other addresses for", "Not shown:", "Service Info: ", "Service detection performed", "filtered" };
+const ignoredPhrases = [_][]const u8{ "#", "Nmap scan report for", "Host is up", "Other addresses for", "Not shown:", "Service Info: ", "Service detection performed", "filtered", "warning" };
 const logo = [_][]const u8{
     \\   ▄████ ▓█████▄▄▄█████▓    ███▄ ▄███▓▓█████     ██▓███   ▒█████   ██▀███  ▄▄▄█████▓  ██████
     \\  ██▒ ▀█▒▓█   ▀▓  ██▒ ▓▒   ▓██▒▀█▀ ██▒▓█   ▀    ▓██░  ██▒▒██▒  ██▒▓██ ▒ ██▒▓  ██▒ ▓▒▒██    ▒
